@@ -1,0 +1,15 @@
+{
+  "name": "rn-demo-backend-services",
+  "version": "1.0.0",
+  "description": "The unsplash api call wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Benjamin Cai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "unsplash-js": "^5.0.0"
+  }
+}
