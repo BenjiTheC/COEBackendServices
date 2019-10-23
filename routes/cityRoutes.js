@@ -10,6 +10,7 @@ const NAME_PLACEHOLDER = 'Unkown';
 const extractPhotoData = photo => {
     return {
         id: photo.id,
+        aspectRatio: photo.width / photo.height,
         description: photo.description || DESC_PLACEHOLDER,
         url: photo.urls.regular,
         likes: photo.likes,
@@ -50,6 +51,18 @@ router.get('/prague', async (req, res) => {
     }
 
     return res.json(photosOfPrague.map(photo => extractPhotoData(photo)));
+});
+
+router.get('/paris', async (req, res) => {
+    const randomPages = Array.from(Array(4).keys()).map(() => randomInteger(1, 126));
+    let photosOfParis = [];
+
+    for (const page of randomPages) {
+        const photosByPage = await unsplashAPI.getPhotosOfCity('paris', page);
+        photosOfParis = [...photosOfParis, ...photosByPage];
+    }
+
+    return res.json(photosOfParis.map(photo => extractPhotoData(photo)));
 });
 
 module.exports = router;
