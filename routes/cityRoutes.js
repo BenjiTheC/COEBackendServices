@@ -24,7 +24,7 @@ router.get('/barcelona', async (req, res) => {
 
     let photosOfBarcelona = [];
     for (const page of randomPages) {
-        const photosByPage = await unsplashAPI.getPhotosOfCity('barcelona', page);
+        const photosByPage = await unsplashAPI.getPhotosOfCity('barcelona', 1, page);
         photosOfBarcelona = [...photosOfBarcelona, ...photosByPage];
     }
 
@@ -35,7 +35,7 @@ router.get('/florence', async (req, res) => {
     const randomPages = Array.from(Array(4).keys()).map(() => randomInteger(1, 13));
     let photosOfFlorence = [];
     for (const page of randomPages) {
-        const photosByPage = await unsplashAPI.getPhotosOfCity('florence', page);
+        const photosByPage = await unsplashAPI.getPhotosOfCity('florence', 1, page);
         photosOfFlorence = [...photosOfFlorence, ...photosByPage];
     }
 
@@ -46,7 +46,7 @@ router.get('/prague', async (req, res) => {
     const randomPages = Array.from(Array(4).keys()).map(() => randomInteger(1, 25));
     let photosOfPrague = [];
     for (const page of randomPages) {
-        const photosByPage = await unsplashAPI.getPhotosOfCity('prague', page);
+        const photosByPage = await unsplashAPI.getPhotosOfCity('prague', 2, page);
         photosOfPrague = [...photosOfPrague, ...photosByPage];
     }
 
@@ -58,7 +58,7 @@ router.get('/paris', async (req, res) => {
     let photosOfParis = [];
 
     for (const page of randomPages) {
-        const photosByPage = await unsplashAPI.getPhotosOfCity('paris', page);
+        const photosByPage = await unsplashAPI.getPhotosOfCity('paris', 2, page);
         photosOfParis = [...photosOfParis, ...photosByPage];
     }
 
