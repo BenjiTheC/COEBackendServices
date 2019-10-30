@@ -11,5 +11,5 @@ app.use(requestLogger);
 configRoutes(app);
 
 app.listen(3000, () => {
-    console.log(`RNDemoBackendService running on ${process.env.HOST}:${process.env.PORT}`);
+    console.log(`COEBackendService running on ${process.env.HOST}:${process.env.PORT}`);
 });
